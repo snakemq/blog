@@ -39,6 +39,8 @@ outputs:
     - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
 
 params:
+  mainSections:
+    - posts
   homeInfoParams:
     Title: Hi
     Content: 你来啦...
