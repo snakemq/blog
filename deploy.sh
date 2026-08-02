@@ -3,6 +3,7 @@ set -Eeuo pipefail
 
 DEFAULT_DEPLOY_REPO="git@github.com:snakemq/snakemq.github.io.git"
 DEPLOY_REPO="${DEPLOY_REPO:-}"
+SOURCE_REPO="${SOURCE_REPO:-git@github.com-snakemq:snakemq/blog.git}"
 DEPLOY_BRANCH="${DEPLOY_BRANCH:-main}"
 PUBLISH_DIR="${PUBLISH_DIR:-public}"
 DEFAULT_COMMIT_MESSAGE="${1:-Deploy blog $(date '+%Y-%m-%d %H:%M:%S %z')}"
@@ -89,9 +90,11 @@ else
 fi
 
 source_upstream="$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null || true)"
-if [[ -n "$source_upstream" ]]; then
-  echo "Pushing blog source to $source_upstream..."
-  git push
+source_branch="$(git branch --show-current)"
+if [[ -n "$source_upstream" && -n "$source_branch" ]]; then
+  source_remote_branch="${source_upstream#*/}"
+  echo "Pushing blog source to $SOURCE_REPO ($source_remote_branch)..."
+  git push "$SOURCE_REPO" "HEAD:$source_remote_branch"
 else
   echo "No upstream configured for blog source; skipping source push."
 fi
