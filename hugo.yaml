@@ -15,10 +15,6 @@ pygmentsUseClasses: true
 defaultContentLanguage: zh # 顶部首先展示的语言界面
 defaultContentLanguageInSubdir: false # 是否要在地址栏加上默认的语言代码
 
-pagination:
-  pagerSize: 3 # 每页展示的文章数量
-  path: page
-
 languages:
   zh:
     languageName: "中文" # 展示的语言名
@@ -43,7 +39,7 @@ outputs:
     - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
 
 params:
-  ShowPageNums: true
+  ShowPostNavLinks: true
   mainSections:
     - posts
   homeInfoParams:
