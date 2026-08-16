@@ -3,14 +3,20 @@
 <nav class="paginav post-nav" aria-label="文章导航">
   {{- with $pages.Next . }}
   <a class="prev post-nav-item" href="{{ .Permalink }}" aria-label="上一篇：{{ .Title | plainify }}">
-    <span class="post-nav-label">上一篇</span>
-    <span class="post-nav-title">{{- .Name -}}</span>
+    <span class="post-nav-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+        <path d="M15 18l-6-6 6-6"></path>
+      </svg>
+    </span>
   </a>
   {{- end }}
   {{- with $pages.Prev . }}
   <a class="next post-nav-item" href="{{ .Permalink }}" aria-label="下一篇：{{ .Title | plainify }}">
-    <span class="post-nav-label">下一篇</span>
-    <span class="post-nav-title">{{- .Name -}}</span>
+    <span class="post-nav-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+        <path d="M9 6l6 6-6 6"></path>
+      </svg>
+    </span>
   </a>
   {{- end }}
 </nav>

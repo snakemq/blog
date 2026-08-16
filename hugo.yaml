@@ -1,6 +1,6 @@
 baseURL: "" # 主站的 URL
 title: 思考的角落 # 站点标题
-copyright: "[©2025 SnakeMQ]()" # 网站的版权声明，通常显示在页脚
+copyright: "@2025·秋水刻剑" # 网站的版权声明，通常显示在页脚
 theme: PaperMod # 主题
 languageCode: zh-cn # 语言
 
